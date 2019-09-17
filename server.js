@@ -9,6 +9,9 @@ app.listen(8000, () => console.log("listening on port 8000"));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
+////// ANGULAR CONNECTION TO PUBLIC //////////////////
+app.use(express.static( __dirname + '/public/dist/public' ));
+
 ////////// MONGOOSE //////////////////////////////////
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/tasksDB', {useNewUrlParser: true});
