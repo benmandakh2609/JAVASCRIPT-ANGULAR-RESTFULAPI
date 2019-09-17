@@ -22,6 +22,26 @@ export class AppComponent implements OnInit {
       this.tasks = data;
     }) 
   }
+  onButtonClick(): void { 
+    console.log(`Click event is working`);
+    let observable = this._httpService.getTasks()
+    observable.subscribe(data => {
+      console.log("Got our tasks!", data)
+      this.tasks = data;
+    })
+  }
+  // onButtonClickParam(num: Number): void { 
+  //   console.log(`Click event is working with num param: ${num}`);
+  //   let observable = this._httpService.postToServer({data:num});
+  //   observable.subscribe(data => console.log("Got our data!", data));
+  // }
+  // onButtonClickParams(num: Number, str: String): void { 
+  //   console.log(`Click event is working with num param: ${num} and str param: ${str}`);
+  // }
+  // onButtonClickEvent(event: any): void { 
+  //   console.log(`Click event is working with event: ${event}`);
+  // }
+
   /////////////////
   // snacks: string[];
   // loggedIn: boolean;

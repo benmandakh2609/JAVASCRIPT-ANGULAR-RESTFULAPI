@@ -9,6 +9,9 @@ export class HttpService {
     // this.getPokemon();
    }
   
+  postToServer(num){
+    return this._http.post('/tasks', num);
+  }
 
   getTasks(){
     // let tempObservable = this._http.get('/tasks');

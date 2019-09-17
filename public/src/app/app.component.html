@@ -16,16 +16,19 @@
     <div class="container">
       <h1>Restful Tasks API</h1>
       <br>
+        <button style="background:pink; font-size:30px; border-radius: 60px" (click)="onButtonClick()" >Get All Tasks</button>
       <h2> All the tasks: </h2>
       <ul>
-          <li *ngFor = "let task of tasks"> {{task.title}} -- {{task.description}} </li>
+          <li *ngFor = "let task of tasks"> {{task.title}} -- {{task.description}} <a style="background-color:grey; border-radius:50px; color:black" href=""> Show </a> </li>
       </ul>
       <br><br>
       <h2> The third task is: </h2>
       <ul>
           <li *ngIf = "tasks[2]"> {{tasks[2].title}} -- {{tasks[2].description}} </li>
       </ul>
-
+        <!-- <button (click)="onButtonClickParam(5)">Click me!</button>
+        <button (click)="onButtonClickParams(5, 'hello')">Click me!</button>
+        <button (click)="onButtonClickEvent($event)">Click me!</button> -->
     </div>
     <router-outlet></router-outlet>
 
