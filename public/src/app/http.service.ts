@@ -18,6 +18,10 @@ export class HttpService {
     // tempObservable.subscribe(data => console.log("Got our tasks!", data));
     return this._http.get('/tasks');
   }
+
+  addTask(newtask){
+    return this._http.post('/task', newtask)
+  }
   // getPokemon(){
   //   let bulbasaur = this._http.get('https://pokeapi.co/api/v2/pokemon/1/');
   //   bulbasaur.subscribe(data => console.log("Got our Pokemon information!", data));

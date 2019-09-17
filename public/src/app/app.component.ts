@@ -9,27 +9,36 @@ import { importType } from '@angular/compiler/src/output/output_ast';
 })
 export class AppComponent implements OnInit {
   // title = 'ben';
-  tasks = [];
-
-  constructor(private _httpService: HttpService){}
+  // tasks = [];
+  newTask: any;
+  constructor(){}
   ngOnInit(){
-    this.getTasksFromService()
+    this.newTask = { title: "", description: "", completed: "" }
   }
-  getTasksFromService(){
-    let observable = this._httpService.getTasks()
-    observable.subscribe(data => {
-      console.log("Got our tasks!", data)
-      this.tasks = data;
-    }) 
+
+  onSubmit(){
+    this.newTask = { title: "", description: "", completed: "" }
   }
-  onButtonClick(): void { 
-    console.log(`Click event is working`);
-    let observable = this._httpService.getTasks()
-    observable.subscribe(data => {
-      console.log("Got our tasks!", data)
-      this.tasks = data;
-    })
-  }
+
+  // constructor(private _httpService: HttpService){}
+  // ngOnInit(){
+  //   this.getTasksFromService()
+  // }
+  // getTasksFromService(){
+  //   let observable = this._httpService.getTasks()
+  //   observable.subscribe(data => {
+  //     console.log("Got our tasks!", data)
+  //     this.tasks = data;
+  //   }) 
+  // }
+  // onButtonClick(): void { 
+  //   console.log(`Click event is working`);
+  //   let observable = this._httpService.getTasks()
+  //   observable.subscribe(data => {
+  //     console.log("Got our tasks!", data)
+  //     this.tasks = data;
+  //   })
+  // }
   // onButtonClickParam(num: Number): void { 
   //   console.log(`Click event is working with num param: ${num}`);
   //   let observable = this._httpService.postToServer({data:num});
